@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to bottom right, #4a90e2, #50e3c2); /* Gradient background */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Retro Calculator Container */
+.calculator {
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    border: 5px solid #b0a160;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Heading Style */
+h1 {
+    font-size: 2rem; /* Adjust the font size */
+    color: #333; /* Dark color for better contrast */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Display Screen */
+.display input {
+    width: 100%;
+    height: 70px;
+    font-size: 2.5rem;
+    border: 2px solid #b0a160;
+    background-color: #ffe599;
+    color: #333;
+    text-align: right;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+/* Base Button Style */
+.btn {
+    background-color: #fff4e6;
+    color: #3b3a30;
+    border: 2px solid #b0a160;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #b0a160;
+    color: white;
+}
+
+/* Button Press Effect */
+.btn:active {
+    transform: scale(0.96);
+    background-color: #7e6b36;
+    color: white;
+}
+
+/* Zero Button */
+.btn.zero {
+    grid-column: span 2; /* Zero spans across two columns */
+}
+
+/* Special Button Colors */
+.btn.operator {
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+}
+
+.btn.operator:hover {
+    background-color: #e6ac00;
+}
+
+.btn.equal {
+    background-color: #e66161;
+    color: #fff;
+}
+
+.btn.equal:hover {
+    background-color: #cc5252;
+}
+
+/* Decorative Retro Elements */
+.calculator::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: #e6ac00;
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.calculator::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: #e66161;
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.buttons {
+    position: relative;
+    z-index: 1; /* Ensure buttons appear above retro elements */
+}
+
+.display {
+    position: relative;
+    z-index: 1; /* Ensure display appears above retro elements */
+}
